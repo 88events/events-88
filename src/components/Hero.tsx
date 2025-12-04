@@ -15,7 +15,7 @@ export default function Hero() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
@@ -26,7 +26,7 @@ export default function Hero() {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
-  
+
   const services = [
     { name: "Gallery", href: "/gallery" },
     { name: "Catering", href: "/catering" },
@@ -111,7 +111,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-900 grain-texture">
       {/* Subtle accent line at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
 
@@ -193,7 +193,7 @@ export default function Hero() {
               ],
               scale: [1, 1.08, 1.15, 1.22, 1.3],
               opacity: [0, bubble.opacity * 0.8, bubble.opacity, bubble.opacity * 0.9, 0],
-              boxShadow: isMobile 
+              boxShadow: isMobile
                 ? [
                     `0 0 ${bubble.size * 2}px rgba(251, 191, 36, ${bubble.opacity * 0.3})`,
                     `0 0 ${bubble.size * 2.5}px rgba(251, 191, 36, ${bubble.opacity * 0.4})`,
@@ -391,24 +391,44 @@ export default function Hero() {
           className="mb-6 sm:mb-10 md:mb-12 flex justify-center"
         >
           <div className="relative">
+            {/* Glow effect behind logo */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-radial from-amber-400/30 via-amber-500/10 to-transparent blur-3xl"
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              style={{
+                width: '200%',
+                height: '200%',
+                left: '-50%',
+                top: '-50%',
+              }}
+            />
             <Image
               src="/88-logo.png"
               alt="88 Events"
               width={240}
               height={240}
-              className="w-28 sm:w-36 md:w-40 h-auto drop-shadow-2xl"
+              className="relative w-28 sm:w-36 md:w-40 h-auto drop-shadow-2xl"
               priority
               quality={100}
             />
           </div>
         </motion.div>
 
-        {/* Main heading - Stronger weight */}
+        {/* Main heading - Elegant serif */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal text-white mb-4 sm:mb-5 md:mb-6 tracking-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-white mb-4 sm:mb-5 md:mb-6 tracking-tight"
+          style={{ fontFamily: "'Cormorant', serif" }}
         >
           Eighty-Ate Events
         </motion.h1>
@@ -436,15 +456,25 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -3 }}
+                whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-amber-400/15 to-amber-500/15 border-2 border-amber-400/30 rounded-full overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-amber-400/60 hover:shadow-[0_0_40px_rgba(251,191,36,0.25)] hover:bg-amber-400/20"
+                className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-amber-400/15 to-amber-500/15 border-2 border-amber-400/30 rounded-full overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-amber-400/70 hover:shadow-[0_0_60px_rgba(251,191,36,0.35)] hover:bg-amber-400/25"
               >
-                {/* Subtle shine effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Animated shimmer effect */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 2s infinite',
+                  }}
+                />
 
-                {/* Text - Better weight */}
-                <span className="relative z-10 text-amber-400 group-hover:text-amber-300 font-medium tracking-wide transition-colors duration-300 text-sm sm:text-base">
+                {/* Subtle glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/0 via-amber-400/10 to-amber-400/0 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+
+                {/* Text */}
+                <span className="relative z-10 text-amber-400 group-hover:text-amber-200 font-medium tracking-wide transition-colors duration-300 text-sm sm:text-base">
                   {service.name}
                 </span>
               </motion.div>

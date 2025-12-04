@@ -77,7 +77,7 @@ export default function GalleryPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-neutral-900 pt-32 pb-24 relative overflow-hidden">
+      <main className="min-h-screen bg-neutral-900 grain-texture pt-32 pb-24 relative overflow-hidden">
         {/* Minimal Particle Background - Very Subtle */}
         <div className="absolute inset-0 pointer-events-none opacity-12">
           {mounted && particles.map((particle) => (

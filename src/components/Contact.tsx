@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Contact() {
   const [showForm, setShowForm] = useState(false);
   return (
-    <section id="contact" className="relative py-32 bg-neutral-900">
+    <section id="contact" className="relative py-32 bg-neutral-900 grain-texture">
       {/* Top border accent with animation */}
       <motion.div
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"
@@ -23,7 +23,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-normal text-neutral-100 mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-neutral-100 mb-6" style={{ fontFamily: "'Cormorant', serif" }}>
             Let's Create Something Amazing
           </h2>
           <p className="text-lg md:text-xl text-neutral-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">

@@ -31,7 +31,7 @@ export default function About() {
   ];
 
   return (
-    <section className="relative py-32 bg-neutral-900 overflow-hidden">
+    <section className="relative py-32 bg-neutral-900 grain-texture overflow-hidden">
       {/* Warm amber accent glows - slightly stronger for visual interest */}
       <div className="absolute inset-0">
         <motion.div
@@ -79,7 +79,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-normal text-neutral-100 mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-neutral-100 mb-6" style={{ fontFamily: "'Cormorant', serif" }}>
             Elevating Events Through Experience
           </h2>
           <p className="text-lg md:text-xl text-neutral-300 max-w-4xl mx-auto font-light leading-relaxed">
