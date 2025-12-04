@@ -39,7 +39,8 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-gradient-to-br from-neutral-800/80 to-neutral-850/80 border border-neutral-700/50 rounded-2xl p-8 hover:border-amber-400/60 transition-all duration-300 hover:shadow-[0_0_50px_rgba(251,191,36,0.2)]"
+              onClick={() => setShowForm(true)}
+              className="bg-gradient-to-br from-neutral-800/80 to-neutral-850/80 border border-neutral-700/50 rounded-2xl p-8 hover:border-amber-400/60 transition-all duration-300 hover:shadow-[0_0_50px_rgba(251,191,36,0.2)] cursor-pointer"
             >
               <div className="mb-4 text-amber-400">
                 <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,20 +49,12 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-medium text-neutral-100 mb-4">Email Us</h3>
               <div className="space-y-3">
-                <motion.a
-                  href="mailto:contact@events-88.com"
-                  whileHover={{ scale: 1.05 }}
-                  className="block text-amber-400 hover:text-amber-300 transition-colors duration-300 font-medium"
-                >
+                <div className="block text-amber-400 transition-colors duration-300 font-medium">
                   contact@events-88.com
-                </motion.a>
-                <motion.a
-                  href="mailto:arina@events-88.com"
-                  whileHover={{ scale: 1.05 }}
-                  className="block text-amber-400 hover:text-amber-300 transition-colors duration-300 font-medium"
-                >
+                </div>
+                <div className="block text-amber-400 transition-colors duration-300 font-medium">
                   arina@events-88.com
-                </motion.a>
+                </div>
               </div>
             </motion.div>
 
@@ -72,7 +65,8 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-gradient-to-br from-neutral-800/80 to-neutral-850/80 border border-neutral-700/50 rounded-2xl p-8 hover:border-amber-400/60 transition-all duration-300 hover:shadow-[0_0_50px_rgba(251,191,36,0.2)]"
+              onClick={() => setShowForm(true)}
+              className="bg-gradient-to-br from-neutral-800/80 to-neutral-850/80 border border-neutral-700/50 rounded-2xl p-8 hover:border-amber-400/60 transition-all duration-300 hover:shadow-[0_0_50px_rgba(251,191,36,0.2)] cursor-pointer"
             >
               <div className="mb-4 text-amber-400">
                 <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,13 +74,9 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="text-xl font-medium text-neutral-100 mb-4">Call or Text</h3>
-              <motion.a
-                href="tel:6507047978"
-                whileHover={{ scale: 1.05 }}
-                className="block text-2xl text-amber-400 hover:text-amber-300 transition-colors duration-300 mb-3 font-semibold"
-              >
+              <div className="block text-2xl text-amber-400 transition-colors duration-300 mb-3 font-semibold">
                 (650) 704-7978
-              </motion.a>
+              </div>
               <div className="text-sm text-neutral-300 space-y-1 font-light">
                 <p>📱 Text: 24 hours</p>
                 <p>📞 Call: 12-7 PM</p>
@@ -190,7 +180,7 @@ export default function Contact() {
 
               {/* Text Option */}
               <motion.a
-                href="sms:6507047978?&body=Hi%2C%20I'm%20interested%20in%20your%20event%20services."
+                href="sms:6507047978?body=Hi%2C%20I'm%20interested%20in%20your%20event%20services."
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-neutral-800 to-neutral-850 border border-neutral-700 hover:border-amber-400/60 rounded-xl transition-all group"
