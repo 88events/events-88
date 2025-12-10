@@ -1,0 +1,11 @@
+name = "events-88"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+# Configuration for Cloudflare Pages
+[env.production]
+# Add your production environment variables here if needed
+
+[env.preview]
+# Add your preview environment variables here if needed
